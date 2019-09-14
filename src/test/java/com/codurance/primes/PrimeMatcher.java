@@ -6,12 +6,11 @@ import org.hamcrest.Matcher;
 
 import java.math.BigInteger;
 
-class PrimeMatcher extends BaseMatcher<Long> {
+class PrimeMatcher extends BaseMatcher<BigInteger> {
     @Override
     public boolean matches(Object actual) {
-        return actual instanceof Long
-                && BigInteger.valueOf((Long) actual)
-                             .isProbablePrime(Integer.MAX_VALUE);
+        return actual instanceof BigInteger
+                && ((BigInteger) actual).isProbablePrime(Integer.MAX_VALUE);
     }
 
     @Override
@@ -24,7 +23,7 @@ class PrimeMatcher extends BaseMatcher<Long> {
         description.appendText(item + " is not a prime number");
     }
 
-    static Matcher<Long> isPrime() {
+    static Matcher<BigInteger> isPrime() {
         return new PrimeMatcher();
     }
 }

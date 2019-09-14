@@ -3,6 +3,7 @@ package com.codurance.primes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
 import java.time.Duration;
 
 import static com.codurance.primes.PrimeMatcher.isPrime;
@@ -22,7 +23,7 @@ class PrimesTest {
 
     @Test
     void returns_a_prime_number() {
-        long result = calculator.calculateLargestPrimeIn(HALF_A_SECOND);
+        BigInteger result = calculator.calculateLargestPrimeIn(HALF_A_SECOND);
         assertThat(result, isPrime());
     }
 
