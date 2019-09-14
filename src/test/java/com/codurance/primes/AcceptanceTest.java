@@ -11,7 +11,7 @@ import static java.time.Duration.ofMillis;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 
-class PrimesTest {
+class AcceptanceTest {
 
     private static final Duration HALF_A_SECOND = Duration.ofMillis(500);
     private PrimeCalculator calculator;
